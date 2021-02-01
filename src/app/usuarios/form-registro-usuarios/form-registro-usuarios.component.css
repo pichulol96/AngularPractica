@@ -1,0 +1,40 @@
+
+	h4{
+	text-align: center;
+	 background: #15168a;
+	 color: white;
+	 padding: 10px;
+}
+.registrar{
+	background: orange;
+	border-color: orange;
+	margin-top: 10px;
+	color: white;
+  }
+.registrar:hover{
+	background: #f5ad28;
+	border-color: #f5ad28;
+	color: white;
+
+}
+.btn-info
+{
+	margin-top: 10px;
+	
+}
+label{
+
+}
+input{
+	
+	
+
+}
+.focus{
+	background: red;
+}
+.registrar:focus{
+	background: #f5ad28;
+	border-color: #f5ad28;
+	color: white;
+}

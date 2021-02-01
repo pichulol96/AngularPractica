@@ -1,0 +1,52 @@
+<div class="titulo">
+	<img class="img-responsive" src="assets/archivos/1.png" width="100">'
+	<h1>Sistemaa de control de inventarios y resguardo</h1>
+</div>
+
+<div class="datos-login">
+	<h4>Marco Antonio Lorenzo Lucena</h4>
+	<button class="btn btn-sm btn-danger"><img src="assets/icons2/power.svg" height="20"></button>
+</div>
+
+<div class="all-div">
+
+<div class="menu">
+	<div class="submenu-1">
+		<ul>
+			Usuarios
+			<li><a [ngClass]="myClass ? 'focusMenu': 'focusMenu2'" (click)="mostrarUsuarios('lista')" href="#"><img src="assets/icons2/person-lines-fill.svg" height="30">Usuarios registrados</a></li>
+			<li><a (click)="mostrarUsuarios('registrar')" href="#"><img src="assets/icons2/person-plus-fill.svg"height="30">Registrar usuarios</a></li>
+		</ul>
+		
+		
+	</div>
+	
+	<div class="submenu-2">
+		<ul>
+			Inventarios
+			<li><a href="#">Alta de articulos</a></li>
+			<li><a href="#">Bajas</a></li>
+		</ul>
+	
+	</div>
+
+	<div class="submenu-3">
+		<ul>
+			Resguardos
+			<li><a href="#">Lista de resguardo</a></li>
+			<li><a href="#">Nuevo resguardo</a></li>
+		</ul>
+		
+		
+	</div>
+</div>
+
+<div class="contenido">
+	
+	<app-form-registro-usuarios *ngIf="mostrar"></app-form-registro-usuarios>
+	<app-tabla-usuarios *ngIf="mostrar2" ></app-tabla-usuarios>
+	
+
+</div>
+
+</div>
