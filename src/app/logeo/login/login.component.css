@@ -1,3 +1,7 @@
+body
+{
+	background: red;
+}
 h1{
 	text-align: center;
 	padding-top: 20px;
@@ -7,12 +11,12 @@ h4{
 	padding-top: 20px;
 }
 form{
-	margin-top: 50px;
-	padding: 19px;
-	width: 49%;
-	height: 500px;
-	margin-left: 270px;
-	border: solid 2px black;
-	border-radius: 10px;
 
+
+
+
+}
+
+.container{
+	margin-top: 50px;
 }

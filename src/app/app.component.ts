@@ -6,8 +6,9 @@ import { Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-	mostrarLogin=false;
-	mostrarPanelAdmi=true;
+	mostrarLogin=true;
+	mostrarPanelAdmi=false;
   title = 'AngularPractica';
+
   
 }

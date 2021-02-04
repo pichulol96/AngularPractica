@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 status="Formulari no enviado";
+// evento de hijo a padre
+@Output()
+comunicacion: EventEmitter<boolean>=new EventEmitter<boolean>();
+
 valorInput="";
+true=true;
+//false="true";
   constructor() { }
 
   ngOnInit(): void {
@@ -27,7 +33,7 @@ valorInput="";
   }
 
   logeando(){
-    alert("hola");
+    this.comunicacion.emit(this.true);
 
   }
 

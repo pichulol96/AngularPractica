@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-panel-admi',
@@ -9,6 +9,9 @@ export class PanelAdmiComponent implements OnInit {
 mostrar=false;
 mostrar2=false;
 myClass=false;
+salir=false;
+@Output()
+CerraSesion: EventEmitter<boolean>=new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -31,6 +34,13 @@ myClass=false;
 
     }
   	
+  }
+
+  saliendo(){
+     alert("Cerrando session");
+    this.CerraSesion.emit(this.salir);
+
+
   }
 
   
