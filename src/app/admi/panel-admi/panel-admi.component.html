@@ -25,8 +25,10 @@
 	<div class="submenu-2">
 		<ul>
 			Inventarios
-			<li><a href="#">Alta de articulos</a></li>
-			<li><a href="#">Bajas</a></li>
+			<li><a href="#">Lista de articulos</a></li>
+			<li><a href="#">Articulos en stock</a></li>
+			<li><a href="#">Nueva baja de articulos</a></li>
+			<li><a href="#">Listado de bajas</a></li>
 		</ul>
 	
 	</div>
@@ -45,8 +47,8 @@
 <div class="contenido">
 	
 	<app-form-registro-usuarios *ngIf="mostrar"></app-form-registro-usuarios>
-	<app-tabla-usuarios *ngIf="mostrar2" ></app-tabla-usuarios>
-	
+	<app-tabla-usuarios (editarUsuario)="editarUser()" *ngIf="mostrar2" ></app-tabla-usuarios>
+	<app-form-editar-usuarios *ngIf="editar"></app-form-editar-usuarios>
 
 </div>
 

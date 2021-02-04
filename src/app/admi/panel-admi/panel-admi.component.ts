@@ -8,6 +8,7 @@ import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
 export class PanelAdmiComponent implements OnInit {
 mostrar=false;
 mostrar2=false;
+editar=false;
 myClass=false;
 salir=false;
 @Output()
@@ -23,12 +24,14 @@ CerraSesion: EventEmitter<boolean>=new EventEmitter<boolean>();
     {
       this.mostrar= !this.mostrar;
       this.mostrar2= false;
+      this.editar=false;
     }
     if(accion=="lista")
     {
        this.mostrar2= !this.mostrar2;
        this.myClass=!this.myClass;
        this.mostrar= false;
+       this.editar=false;
        
 
 
@@ -39,6 +42,13 @@ CerraSesion: EventEmitter<boolean>=new EventEmitter<boolean>();
   saliendo(){
      alert("Cerrando session");
     this.CerraSesion.emit(this.salir);
+
+
+  }
+
+  editarUser(){
+     this.editar=!this.editar;
+     this.mostrar2=!this.mostrar2;
 
 
   }

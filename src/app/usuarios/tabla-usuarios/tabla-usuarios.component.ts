@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-tabla-usuarios',
@@ -10,6 +10,12 @@ export class TablaUsuariosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  @Output()
+  editarUsuario: EventEmitter<string>=new EventEmitter<string>();
+  editUser(){
+  	this.editarUsuario.emit('true');
   }
 
 }
