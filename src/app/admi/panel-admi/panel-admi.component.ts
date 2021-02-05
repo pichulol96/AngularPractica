@@ -9,6 +9,11 @@ export class PanelAdmiComponent implements OnInit {
 mostrar=false;
 mostrar2=false;
 editar=false;
+//inventario
+inventarioLista=false;
+editarInve=false;
+registrarInve=false;
+
 myClass=false;
 salir=false;
 @Output()
@@ -25,6 +30,9 @@ CerraSesion: EventEmitter<boolean>=new EventEmitter<boolean>();
       this.mostrar= !this.mostrar;
       this.mostrar2= false;
       this.editar=false;
+      this.inventarioLista=false;
+      this.editarInve=false;
+      this.registrarInve=false;
     }
     if(accion=="lista")
     {
@@ -32,11 +40,36 @@ CerraSesion: EventEmitter<boolean>=new EventEmitter<boolean>();
        this.myClass=!this.myClass;
        this.mostrar= false;
        this.editar=false;
+       this.inventarioLista=false;
+       this.editarInve=false;
+       this.registrarInve=false;
        
 
 
     }
   	
+  }
+
+  mostrarInventario(accion:string)
+  {
+    if(accion=="lista")
+    {
+      this.mostrar= false;
+      this.mostrar2= false;
+      this.editar=false;
+      this.editarInve=false;
+      this.registrarInve=false;
+      this.inventarioLista=!this.inventarioLista;
+    }
+    if(accion=="nuevo")
+    {
+       this.mostrar= false;
+      this.mostrar2= false;
+      this.editar=false;
+      this.editarInve=false;
+      this.registrarInve=!this.registrarInve;
+      this.inventarioLista=false;
+    }
   }
 
   saliendo(){
@@ -45,7 +78,7 @@ CerraSesion: EventEmitter<boolean>=new EventEmitter<boolean>();
 
 
   }
-
+//comunicacion
   editarUser(){
      this.editar=!this.editar;
      this.mostrar2=!this.mostrar2;
@@ -53,8 +86,12 @@ CerraSesion: EventEmitter<boolean>=new EventEmitter<boolean>();
 
   }
 
-  
+   editarInventario(){
+     this.inventarioLista=!this.inventarioLista;
+     this.editarInve=!this.editarInve;
 
- 
+
+  }
+  
 
 }

@@ -1,0 +1,62 @@
+<div class="card">
+  <h5 class="card-header">Inventario</h5>
+  <div class="card-body">
+    <form>
+      <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-danger">Eliminar</button>
+          <button type="button"(click)="editInventario()" class="btn btn-success">Actualizar</button>
+          <select class="form-control">
+            <option disabled selected value>Filtrar</option>
+            <option>nombre</option>
+            <option>fecha</option>
+            <option>apellidos</option>
+          </select>
+          
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar articulo" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+            </div>
+        </div>
+  
+
+
+      
+    </form>
+
+      <div class="table-responsive-sm">
+          <table class="table table table-hover">
+            <thead class="">
+            <tr class="bg-primary text-white">
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+          </table>
+    </div>
+
+  </div>
+</div>

@@ -8,6 +8,9 @@ import { PanelAdmiComponent } from './admi/./panel-admi/panel-admi.component';
 import { FormRegistroUsuariosComponent } from './usuarios/./form-registro-usuarios/form-registro-usuarios.component';
 import { TablaUsuariosComponent } from './usuarios/./tabla-usuarios/tabla-usuarios.component';
 import { FormEditarUsuariosComponent } from './usuarios/./form-editar-usuarios/form-editar-usuarios.component';
+import { TablaInventarioComponent } from './inventario/./tabla-inventario/tabla-inventario.component';
+import { FormEditarInventarioComponent } from './inventario/./form-editar-inventario/form-editar-inventario.component';
+import { FormRegistroInventarioComponent } from './inventario/./form-registro-inventario/form-registro-inventario.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { FormEditarUsuariosComponent } from './usuarios/./form-editar-usuarios/f
     PanelAdmiComponent,
     FormRegistroUsuariosComponent,
     TablaUsuariosComponent,
-    FormEditarUsuariosComponent
+    FormEditarUsuariosComponent,
+    TablaInventarioComponent,
+    FormEditarInventarioComponent,
+    FormRegistroInventarioComponent
   ],
   imports: [
     BrowserModule,
