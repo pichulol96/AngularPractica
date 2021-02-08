@@ -1,3 +1,6 @@
 <app-login (comunicacion)="mostrarLogin = !$event " *ngIf="mostrarLogin"></app-login>
 <app-panel-admi (CerraSesion)="mostrarLogin = !$event " *ngIf="mostrarLogin==false"></app-panel-admi>
 
+<div class="container">
+	<router-outlet></router-outlet>
+</div>

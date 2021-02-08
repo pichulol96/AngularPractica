@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 
+//rutas
+import { AppRoutingModule } from './app-routing.module';
+//componentes
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './logeo/./login/login.component';
 import { PanelAdmiComponent } from './admi/./panel-admi/panel-admi.component';
@@ -26,7 +30,8 @@ import { FormRegistroInventarioComponent } from './inventario/./form-registro-in
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
 
   ],
   providers: [],
