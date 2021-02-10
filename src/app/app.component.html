@@ -1,6 +1,78 @@
+<!--
 <app-login (comunicacion)="mostrarLogin = !$event " *ngIf="mostrarLogin"></app-login>
 <app-panel-admi (CerraSesion)="mostrarLogin = !$event " *ngIf="mostrarLogin==false"></app-panel-admi>
+-->
+<header>
+	<div class="titulo">
+		<img class="img-responsive" src="assets/archivos/1.png" width="100">'
+		<h1>Sistemaa de control de inventarios y resguardo</h1>
+	</div>
 
-<div class="container">
-	<router-outlet></router-outlet>
-</div>
+	<div class="datos-login">
+		<h4>Marco Antonio Lorenzo Lucena</h4>
+		<button  class="btn btn-sm btn-danger"><img src="assets/icons2/power.svg" height="20"></button>
+	</div>
+
+	<nav>
+		 <div class="menu">
+			<div class="submenu-1">
+				<ul>
+					Usuarios
+					<li routerLinkActive="focusMenu" >
+						<a [routerLink]="['user/consultar']">
+							<img src="assets/icons2/person-lines-fill.svg" height="30">Usuarios registrados
+						</a>
+					</li>
+					<li routerLinkActive="focusMenu">
+						<a [routerLink]="['user/registrar']" >
+							<img src="assets/icons2/person-plus-fill.svg"height="30">Registrar usuarios
+						</a>
+					</li>
+				</ul>
+				
+				
+			</div>
+		
+			<div class="submenu-2">
+				<ul>
+					Inventarios
+					<li routerLinkActive="focusMenu">
+					 <a [routerLink]="['inventario/listaArticulos']">Lista de articulos</a>
+					</li>
+					<li routerLinkActive="focusMenu">
+						<a [routerLink]="['inventario/nuevoArticulo']" >Nuevo articulo</a>
+					</li>
+					<li>
+						<a href="#">Nueva baja de articulos</a>
+					</li>
+					<li>
+						<a href="#">Listado de bajas</a>
+					</li>
+				</ul>
+			
+			</div>
+
+			<div class="submenu-3">
+				<ul>
+					Resguardos
+					<li><a href="#">Lista de resguardo</a></li>
+					<li><a href="#">Nuevo resguardo</a></li>
+				</ul>
+				
+				
+			</div>
+	    </div>
+    </nav>
+</header>
+
+
+<section>
+	<div class="contenido">
+	  <router-outlet></router-outlet>
+    </div>
+</section>
+
+<footer>
+	
+</footer>
+

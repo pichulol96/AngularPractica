@@ -1,3 +1,92 @@
-body{
-	background: red;
+.titulo{
+	display: flex;
+   height: 50px;
+   width: 100%;
+   background: #15168a;
+}
+h1{
+	color:white;
+	text-align: center;
+	width: 100%;
+}
+h4{
+	padding-right: 10px;
+}
+ul{
+	color:white;
+}
+li
+{
+	text-decoration: none;
+	list-style: none;
+}
+.datos-login{
+	padding: 10px;
+	display: flex;
+	justify-content: flex-end;
+
+}
+.datos-login button{
+	border-radius: 60px
+}
+.all-div{
+	display: inline;
+}
+.menu{
+	position: fixed;
+	float: left;
+	padding: 20px;
+	display: block;
+	height: 555px;
+	width: 25%;
+	background:#ededf5;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+.submenu-1{
+	margin-top: 10px;
+	height: 110px;
+	background: #bad9f7;
+}
+.submenu-2{
+	
+	margin-top: 10px;
+	height: 160px;
+	background: #bad9f7;
+}
+.submenu-3{
+	
+	margin-top: 10px;
+	height: 110px;
+	background:#bad9f7;
+}
+.contenido{
+	position: fixed;
+	float: left;
+	margin-left: 350px;
+	height: 555px;
+	width: 73%;
+	background: #ededf5;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+a{
+	display: block;
+	text-decoration: none;
+	color: black;
+	padding: 5px;
+
+}
+a:hover{
+	background: #97b0ff;
+
+}
+.focusMenu{
+	
+	
+	border:solid 3px orange;
+	border-right: #97b0ff;
+	border-top: #97b0ff;
+	border-bottom: #97b0ff;
+	
 }

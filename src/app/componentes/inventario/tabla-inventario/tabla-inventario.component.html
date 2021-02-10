@@ -31,29 +31,33 @@
             <thead class="">
             <tr class="bg-primary text-white">
               <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">imgen</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Marca</th>
+              <th scope="col">Modelo</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">No. serie</th>
+              <th scope="col">No. inventario</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Localizacion</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+
+            <tr *ngFor="let articulo of articulos ">
+              <th scope="row">{{articulo.id_articulo}}</th>
+              <td><img src="{{articulo.imagen}}" height="50" width="50" ></td>
+              <td>{{articulo.descripcion}}</td>
+              <td>{{articulo.marca}}</td>
+              <td>{{articulo.modelo}}</td>
+              <td>{{articulo.categoria}}</td>
+              <td>{{articulo.no_serie}}</td>
+              <td>{{articulo.no_inventario}}</td>
+              <td>{{articulo.cantidad}}</td>
+              <td>{{articulo.localizacion}}</td>
+             
             </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+           
           </tbody>
           </table>
     </div>
