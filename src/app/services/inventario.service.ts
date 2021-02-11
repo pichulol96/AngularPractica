@@ -26,11 +26,25 @@ export class InventarioService {
  
   }
 
+  searchArticulos(consulta:object)
+  {
+    //return this.http.post(this.url+'saveArticulos.php',articulo);
+    return this.http.post(this.url+'searchArticulos.php', JSON.stringify(consulta));  
+
+  }
+
   saveArticulos(articulo:object)
   {
     //return this.http.post(this.url+'saveArticulos.php',articulo);
     return this.http.post(this.url+'saveArticulos.php', JSON.stringify(articulo));  
 
+  }
+
+
+  deleteArticulos(idArticulo:number) {
+    //console.log(idArticulo);
+    return this.http.delete(`${this.url}deleteArticulos.php?id=${idArticulo}`);
+   
   }
 
   

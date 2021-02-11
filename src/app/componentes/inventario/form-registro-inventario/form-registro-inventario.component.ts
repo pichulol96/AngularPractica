@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {InventarioService } from '../../.././services/inventario.service';
 import {NgForm,FormGroup,FormBuilder,FormControl,Validators} from '@angular/forms';
+import Swal from 'sweetalert2';
 
 
 
@@ -31,6 +32,7 @@ export class FormRegistroInventarioComponent implements OnInit {
             localizacion:['', Validators.required],
             imagen:['', Validators.required]
 
+
 	     })
     }
 
@@ -43,7 +45,14 @@ export class FormRegistroInventarioComponent implements OnInit {
        let resul=this.InventarioService.saveArticulos(values).subscribe(data=>{
        //	console.log(data)
          
-         	this.articuloGuardado="El Articulo se registro con exito";
+         	//this.articuloGuardado="El Articulo se registro con exito";
+           Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Articulo Registrado',
+          showConfirmButton: false,
+          timer: 1000
+          })
          	this.articulosRegistrar.patchValue({
 
          	

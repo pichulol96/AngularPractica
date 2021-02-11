@@ -1,0 +1,5 @@
+
+table tbody tr:focus {
+  background-color: pink;
+  outline: 0; /*remove outline*/
+}
