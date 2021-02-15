@@ -20,6 +20,11 @@ export class TablaInventarioComponent implements OnInit {
  articulos:any;
  //eliminar
  deleteArti:number;
+ //lista
+ listas=[
+ {id:null,title:null,foto:null}
+ 
+ ];
   constructor(private InventarioService:InventarioService,private router:Router) {
        //this.getArticulos(); //trate todos datos de la tabla al cargar el componente
        this.deleteArti=0;
@@ -134,6 +139,14 @@ export class TablaInventarioComponent implements OnInit {
                     })
                    
         }
+    }
+
+    agregarArticuloLista(id:any,descripcion:any,foto:any){
+      //alert(id);
+       this.listas.push( {id:id,title:descripcion,foto:foto});
+     // alert (this.lista);
+      console.log(this.listas);
+
     }
   
 

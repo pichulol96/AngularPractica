@@ -2,6 +2,7 @@
 <app-login (comunicacion)="mostrarLogin = !$event " *ngIf="mostrarLogin"></app-login>
 <app-panel-admi (CerraSesion)="mostrarLogin = !$event " *ngIf="mostrarLogin==false"></app-panel-admi>
 -->
+<!--
 <header>
 	<div class="titulo">
 		<img class="img-responsive" src="assets/archivos/1.png" width="100">'
@@ -37,10 +38,12 @@
 				<ul>
 					Inventarios
 					<li routerLinkActive="focusMenu">
-					 <a [routerLink]="['inventario/listaArticulos']">Lista de articulos</a>
+					 <a [routerLink]="['inventario/listaArticulos']">
+					 	<img src="assets/icons2/table.svg"height="30">Lista de articulos</a>
 					</li>
 					<li routerLinkActive="focusMenu">
-						<a [routerLink]="['inventario/nuevoArticulo']" >Nuevo articulo</a>
+						<a [routerLink]="['inventario/nuevoArticulo']" >
+							<img src="assets/icons2/bag-plus.svg"height="30">Nuevo articulo</a>
 					</li>
 					<li>
 						<a href="#">Nueva baja de articulos</a>
@@ -55,8 +58,12 @@
 			<div class="submenu-3">
 				<ul>
 					Resguardos
-					<li><a href="#">Lista de resguardo</a></li>
-					<li><a href="#">Nuevo resguardo</a></li>
+					<li>
+						<a href="#"><img src="assets/icons2/journal-check.svg"height="30">Lista de resguardo</a>
+					</li>
+					<li routerLinkActive="focusMenu">
+						<a [routerLink]="['resguardo/nuevoResguardo']"><img src="assets/icons2/file-plus-fill.svg"height="30">Nuevo resguardo</a>
+					</li>
 				</ul>
 				
 				
@@ -75,4 +82,107 @@
 <footer>
 	
 </footer>
+-->
 
+
+<header>
+	<div class="">
+		<div class="row" style="background:#0404B4;">
+			<div  class="col-sm-2">
+				<div class="titulo">
+					<img class="img-responsive" src="assets/archivos/1.png" width="100">'
+					
+				</div>
+			</div>
+			<div class="col-sm-8">
+				<h1>Sistemaa de control de inventarios y resguardo</h1>
+			</div>
+
+		</div>
+
+		<div class="">
+			<div class="datos-login">
+					<h4>Marco Antonio Lorenzo Lucena</h4>
+					<button  class="btn btn-sm btn-danger"><img src="assets/icons2/power.svg" height="20"></button>
+			</div>
+		</div>
+	    
+	</div>
+</header>
+
+<div class="">
+	<div style="" class="row">
+		<div  class=" col-sm-2">
+			<nav class="shadow p-3 mb-5 bg-white rounded">
+				<div class="menu">
+				<div class="submenu-1">
+					<ul>
+						<label>Usuarios</label>
+						<li routerLinkActive="focusMenu" >
+							<a [routerLink]="['user/consultar']">
+								<img src="assets/icons2/person-lines-fill.svg" height="30">Usuarios registrados
+							</a>
+						</li>
+						<li routerLinkActive="focusMenu">
+							<a [routerLink]="['user/registrar']" >
+								<img src="assets/icons2/person-plus-fill.svg"height="30">Registrar usuarios
+							</a>
+						</li>
+					</ul>
+					
+					
+				</div>
+			
+				<div class="submenu-2">
+					<ul>
+						<label>Inventario</label>
+						<li routerLinkActive="focusMenu">
+						 <a [routerLink]="['inventario/listaArticulos']">
+						 	<img src="assets/icons2/table.svg"height="30">Lista de articulos</a>
+						</li>
+						<li routerLinkActive="focusMenu">
+							<a [routerLink]="['inventario/nuevoArticulo']" >
+								<img src="assets/icons2/bag-plus.svg"height="30">Nuevo articulo</a>
+						</li>
+						<li>
+							<a href="#">Nueva baja de articulos</a>
+						</li>
+						<li>
+							<a href="#">Listado de bajas</a>
+						</li>
+					</ul>
+				
+				</div>
+
+				<div class="submenu-3">
+					<ul>
+						<label>Resguardo</label>
+						<li>
+							<a href="#"><img src="assets/icons2/journal-check.svg"height="30">Lista de resguardo</a>
+						</li>
+						<li routerLinkActive="focusMenu">
+							<a [routerLink]="['resguardo/nuevoResguardo']"><img src="assets/icons2/file-plus-fill.svg"height="30">Nuevo resguardo</a>
+						</li>
+					</ul>
+					
+					
+				</div>
+		    </div>
+		 </nav>
+		</div>
+
+		<div  class="  col-sm-10 ">
+			<section>
+				<div class="contenido">
+				  <router-outlet></router-outlet>
+			    </div>
+			</section>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<footer>
+			
+	</footer>
+</div>

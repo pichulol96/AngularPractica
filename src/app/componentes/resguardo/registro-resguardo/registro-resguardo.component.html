@@ -1,0 +1,71 @@
+<div class="card">
+  <h5 class="card-header">Registrar Resguardo</h5>
+  <div class="card-body"> 
+  	    <div class="shadow p-3 mb-5 bg-white rounded">
+	  	    <form (ngSubmit)="searchResguardo()">
+	  	    	<div class="input-group">
+				     <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+						  <div class="input-group">
+						    <div class="input-group-prepend">
+						      <div class="input-group-text" id="btnGroupAddon">Buscar</div>
+						    </div>
+						    <input type="text" maxlength="10" name="search" [(ngModel)]="search" class="form-control" placeholder="" aria-label="Input group example" aria-describedby="btnGroupAddon">
+						    <p>{{resultado}}<p>
+						  </div>
+	               </div>
+		       </div>
+	        </form>
+        </div>
+	    
+	   
+        <div class="shadow p-3 mb-5 bg-white rounded">
+		    <form [formGroup]="resguardoRegistrar" (ngSubmit)="newResguardo(resguardoRegistrar.value)">
+		    	 
+					<div class="input-group flex-nowrap">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="addon-wrapping">Numero colaborador</span>
+					  </div>
+					  <input type="text" formControlName="numeroColaborador" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+					</div> <br>
+
+					<div class="input-group flex-nowrap">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="addon-wrapping">Nombre</span>
+					  </div>
+					  <input type="text" formControlName="nombre" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+					</div><br>
+
+					<div class="input-group flex-nowrap">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="addon-wrapping">Apellido</span>
+					  </div>
+					  <input type="text" formControlName="apellido" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+					</div><br>
+
+					<div class="input-group flex-nowrap">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="addon-wrapping">Correo</span>
+					  </div>
+					  <input type="text" formControlName="correo" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+					</div><br>
+
+					<div class="input-group flex-nowrap">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="addon-wrapping">Departamento</span>
+					  </div>
+					  <input type="text" formControlName="departamento" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+					</div><br>
+
+					<div class="input-group flex-nowrap">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" id="addon-wrapping">Puesto</span>
+					  </div>
+					  <input type="text" formControlName="puesto" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+					</div> <br>
+					
+						<button type="submit" [disabled]="resguardoRegistrar.invalid" class="btn btn-xl btn-info">Siguiete</button>
+			</form>
+		</div>
+
+	</div>
+</div>

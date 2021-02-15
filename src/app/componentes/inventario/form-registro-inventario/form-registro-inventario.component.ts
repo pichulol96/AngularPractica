@@ -67,6 +67,6 @@ export class FormRegistroInventarioComponent implements OnInit {
             imagen:''
          });
        });
-       console.log(values);
+       //console.log(values);
 	}
 }

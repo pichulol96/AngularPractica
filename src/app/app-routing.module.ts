@@ -10,7 +10,7 @@ import { FormEditarUsuariosComponent } from './componentes/./usuarios/./form-edi
 import { TablaInventarioComponent } from './componentes/./inventario/./tabla-inventario/tabla-inventario.component';
 import { FormEditarInventarioComponent } from './componentes/./inventario/./form-editar-inventario/form-editar-inventario.component';
 import { FormRegistroInventarioComponent } from './componentes/./inventario/./form-registro-inventario/form-registro-inventario.component';
-
+import { RegistroResguardoComponent } from './componentes/resguardo/registro-resguardo/registro-resguardo.component';
 
 const routes: Routes = [
      //usuarios
@@ -27,6 +27,7 @@ const routes: Routes = [
      {path:'inventario/nuevoArticulo',component:FormRegistroInventarioComponent},
 
      {path:'inventario/editarArticulo',component:FormEditarInventarioComponent},
+     {path:'resguardo/nuevoResguardo',component:RegistroResguardoComponent},
 ];
 
 @NgModule({

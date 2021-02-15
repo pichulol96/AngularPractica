@@ -1,3 +1,4 @@
+<div class="container">
 <div class="card">
   <h5 class="card-header">Inventario</h5>
   <div class="card-body">
@@ -27,7 +28,7 @@
     </form>
 
       <div class="table-responsive-sm">
-          <table class="table table table-hover ">
+          <table class="table table table-hover">
             <thead class="">
             <tr class="bg-primary text-white">
               <th  scope="col">#</th>
@@ -36,10 +37,11 @@
               <th scope="col">Marca</th>
               <th scope="col">Modelo</th>
               <th scope="col">Categoria</th>
-              <th scope="col">No. serie</th>
-              <th scope="col">No. inventario</th>
+              <th scope="col">serie</th>
+              <th scope="col">No.inventario</th>
               <th scope="col">Cantidad</th>
               <th scope="col">Localizacion</th>
+              <th scope="col">Opcion</th>
             </tr>
           </thead>
           <tbody>
@@ -55,6 +57,30 @@
               <td>{{articulo.no_inventario}}</td>
               <td>{{articulo.cantidad}}</td>
               <td>{{articulo.localizacion}}</td>
+              <td><button (click)="agregarArticuloLista(articulo.id_articulo,articulo.descripcion,articulo.imagen)" class="btn btn-sm btn-dark">add</button></td>
+             
+            </tr>
+           
+          </tbody>
+          </table>
+    </div>
+
+          <div class="table-responsive-sm">
+          <table class="table table table-hover">
+            <thead class="">
+            <tr class="bg-dark text-white">
+              <th  scope="col">#</th>
+              <th scope="col">imgen</th>
+              <th scope="col">Descripcion</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr tabindex="0"  *ngFor="let lista of listas ">
+              <th class="focus" scope="row">{{lista.id}}</th>
+              <td><img class="focus"  src="{{lista.foto}}" height="50" width="50" ></td>
+              <td>{{lista.title}}</td>
+              
              
             </tr>
            
@@ -63,4 +89,5 @@
     </div>
 
   </div>
+</div>
 </div>

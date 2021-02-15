@@ -1,3 +1,5 @@
+
+/*
 .titulo{
 	display: flex;
    height: 50px;
@@ -51,7 +53,7 @@ li
 .submenu-2{
 	
 	margin-top: 10px;
-	height: 160px;
+	height: 180px;
 	background: #bad9f7;
 }
 .submenu-3{
@@ -69,6 +71,49 @@ li
 	background: #ededf5;
 	overflow: hidden;
 	overflow-y: scroll;
+}
+*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+h1{
+	text-align: center;
+	color: white;
+	font-family: arial;
+}
+h4{
+	padding: 3px;
+	font-size: 17px;
+}
+label{
+	color:#FF8000;
+	font-size: 20px;
+	text-align: center;
+	padding: 10px;
+}
+.titulo{
+
+   
+}
+.datos-login{
+	padding: 20px;
+	display: flex;
+	justify-content: flex-end;
+	
+
+}
+.datos-login button{
+	border-radius: 60px;
+	padding :8px;
+}
+.menu
+{
+	background:white;
+
+}
+.contenido{
+	background: #ededf5;
 }
 a{
 	display: block;
@@ -89,4 +134,16 @@ a:hover{
 	border-top: #97b0ff;
 	border-bottom: #97b0ff;
 	
+}
+
+
+a{
+	display: block;
+}
+li{
+	text-decoration: none;
+	list-style: none;
+}
+ul{
+	text-decoration: none;
 }

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class InventarioService {
-  public url="http://localhost/api/views/";
+  public url="http://192.168.1.75/api/views/";
   constructor(private http: HttpClient) { 
     //this.getArticulos();
   }
