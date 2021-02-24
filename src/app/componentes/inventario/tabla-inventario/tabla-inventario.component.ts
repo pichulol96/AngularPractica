@@ -139,13 +139,6 @@ export class TablaInventarioComponent implements OnInit {
         }
     }
 
-    agregarArticuloLista(id:number,descripcion:any,foto:any){
-      //alert(id);
-       this.listas.push({id:id,title:descripcion,foto:foto});
-     // alert (this.lista);
-      console.log(this.listas);
-
-    }
   
 
 }
