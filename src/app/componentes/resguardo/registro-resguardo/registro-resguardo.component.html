@@ -1,4 +1,4 @@
-<div class="card">
+<div *ngIf="mostrarResguardo" class="card">
   <h5 class="card-header">Registrar Resguardo</h5>
   <div class="card-body"> 
   	    <div class="shadow p-3 mb-5 bg-white rounded">
@@ -69,3 +69,9 @@
 
 	</div>
 </div>
+<div class="container">
+	<button *ngIf="mostrarResguardo==false" (click)="atras()" class="btn btn-dark">Atras</button>
+</div>
+
+
+<app-lista-articulos *ngIf="mostrarResguardo==false"><app-lista-articulos>

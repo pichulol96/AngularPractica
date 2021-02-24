@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./registro-resguardo.component.css']
 })
 export class RegistroResguardoComponent implements OnInit {
+  mostrarResguardo=true;
 	resguardoRegistrar : FormGroup;
 	existente='';
 	personas:any;
@@ -97,10 +98,16 @@ export class RegistroResguardoComponent implements OnInit {
             puesto:''
             
          });
-         	this.router.navigate(['inventario/listaArticulos']);
+         	//this.router.navigate(['resguardo/listaArticulos']);
+           this.mostrarResguardo=false
        });
         
        console.log(values);
 	}
+
+  atras()
+  {
+    this.mostrarResguardo=true;
+  }
 
 }
