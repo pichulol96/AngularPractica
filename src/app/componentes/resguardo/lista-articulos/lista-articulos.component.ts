@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {InventarioService } from '../../.././services/inventario.service';
+import {ResguardoService } from '../../.././services/resguardo.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista-articulos',
@@ -11,13 +13,16 @@ articulos:any
 objeto:object;
 search:any;
 filtro:any;
+observaciones:any;
 listas:any;
 Tabla=false;
-  constructor(private InventarioService:InventarioService) {
+  constructor(private InventarioService:InventarioService,
+  	          private ResguardoService:ResguardoService) {
       this.objeto={};
       this.listas=[];
       this.search='';
       this.filtro='';
+      this.observaciones='';
    }
 
   ngOnInit(): void {
@@ -38,7 +43,7 @@ Tabla=false;
            filtro:this.filtro,
            campo:this.search
            }
-         //console.log(this.objeto);
+         console.log(consulta);
          let resul=this.InventarioService.searchArticulos(consulta).subscribe(data=>{
          this.articulos=data;
           console.log(data);
@@ -74,7 +79,7 @@ Tabla=false;
 	          }
 	      	  
 	     // alert (this.lista);
-	      console.log(this.listas);
+	      //console.log(this.listas);
     }
 
     eliminarArticuloLista(id:number)
@@ -96,7 +101,28 @@ Tabla=false;
 
     registrarArticuloLista()
     {
-    	console.log(this.listas);
+      //alert(this.observaciones);
+       this.Tabla=false;
+      this.listas.push({observaciones:this.observaciones});
+
+    	//console.log(this.listas);
+      
+
+      let consulta=this.listas;
+       let resul=this.ResguardoService.saveResguardo(consulta).subscribe(data=>{
+         //this.articulos=data;
+          console.log(data);
+            if(data=="Resguardo registrado")
+            {
+              Swal.fire(
+                'Resguardo exitoso!',
+                '',
+                'success',
+              )
+
+              this.listas=[];
+            }
+         });
     }
 
 }

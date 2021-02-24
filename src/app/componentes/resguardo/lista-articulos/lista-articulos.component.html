@@ -37,7 +37,14 @@
     <hr>
 
     <div *ngIf="Tabla" class="table-responsive-sm" >
-      <button (click)="registrarArticuloLista()" class="btn btn-sm btn-info">Registrar</button>
+      <div class="shadow p-3 mb-5 bg-white rounded">
+        <div style="display: flex; padding: 10px;">
+           <button (click)="registrarArticuloLista()" class="btn btn-sm btn-info">Registrar</button>
+           <input type="text" [(ngModel)]="observaciones" name="observaciones"  placeholder="Observaciones" class="form-control" name="">
+        </div>
+      
+      
+      
           <table class="table table table-hover">
             <thead class="">
             <tr class="bg-dark text-white">
@@ -60,6 +67,7 @@
            
           </tbody>
           </table>
+    </div>
     </div>
  </div>
 </div>

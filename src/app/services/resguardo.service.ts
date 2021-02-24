@@ -24,6 +24,13 @@ export class ResguardoService {
 
   }
 
+   saveResguardo(resguardo:object)
+  {
+    //return this.http.post(this.url+'saveArticulos.php',articulo);
+    return this.http.post(this.url+'resguardo/saveResguardo.php', JSON.stringify(resguardo));  
+
+  }
+
 }
 
 
