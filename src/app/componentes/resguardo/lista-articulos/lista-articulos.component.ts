@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter,Input } from '@angular/core';
 import {InventarioService } from '../../.././services/inventario.service';
 import {ResguardoService } from '../../.././services/resguardo.service';
 import Swal from 'sweetalert2';
@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./lista-articulos.component.css']
 })
 export class ListaArticulosComponent implements OnInit {
+@Input() colaborador:number=0;
 articulos:any
 objeto:object;
 search:any;
@@ -16,6 +17,7 @@ filtro:any;
 observaciones:any;
 listas:any;
 Tabla=false;
+mensaje:string="pichu";
   constructor(private InventarioService:InventarioService,
   	          private ResguardoService:ResguardoService) {
       this.objeto={};
@@ -26,6 +28,11 @@ Tabla=false;
    }
 
   ngOnInit(): void {
+    let resul=this.ResguardoService.colaboraor$.subscribe((data:string)=>{
+      this.mensaje=data;
+      console.log(data)
+    })
+
   }
 
   searchArticulos()

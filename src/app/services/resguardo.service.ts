@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ResguardoService {
 	 public url="http://192.168.1.75/api/views/";
+   colaboraor$ = new EventEmitter<string>();
 
   constructor( private http: HttpClient) { }
 

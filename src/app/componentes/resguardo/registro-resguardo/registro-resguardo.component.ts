@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter  } from '@angular/core';
 import {NgForm,FormGroup,FormBuilder,FormControl,Validators} from '@angular/forms';
 import {ResguardoService } from '../../.././services/resguardo.service';
 import { Router } from '@angular/router';//rutas
@@ -17,6 +17,7 @@ export class RegistroResguardoComponent implements OnInit {
 	search:any;
 	resultado='';
 	objetoBuscarPersona:object;
+  Colaborador:any=0;//variable  para comunicar dato al hijo
   constructor(private ResguardoService:ResguardoService ,private _builder:FormBuilder,
   	private router:Router) 
   { 
@@ -61,6 +62,7 @@ export class RegistroResguardoComponent implements OnInit {
 			            departamento:[persona.departamento, Validators.required],
 			            puesto:[persona.puesto,Validators.required]
 		                })
+                 //this.Colaborador=persona.no_colaborador;//variable que comunica al hijo
 	           	}
 	           	this.resultado="Existe";
           }
@@ -73,6 +75,7 @@ export class RegistroResguardoComponent implements OnInit {
 	            correo:['', Validators.required],
 	            departamento:['', Validators.required],
 	            puesto:['', Validators.required]
+
 	 
 		     })
 	            this.resultado="No existe, registre primero";
@@ -82,9 +85,16 @@ export class RegistroResguardoComponent implements OnInit {
     }
     
 
-  newResguardo(values:object)
+  newResguardo(values:any)
 	{
 		//alert("hola");
+       if(values)
+       {
+         this.Colaborador=values.numeroColaborador;
+         //se guarda el numero de colaborador para cuminicar al componente hijo
+       }
+       
+
        let resul=this.ResguardoService.savePersona(values).subscribe(data=>{
        	console.log(data)
          	this.resguardoRegistrar.patchValue({
@@ -99,7 +109,8 @@ export class RegistroResguardoComponent implements OnInit {
             
          });
          	//this.router.navigate(['resguardo/listaArticulos']);
-           this.mostrarResguardo=false
+           this.mostrarResguardo=false;
+           //this.ResguardoService.colaboraor$.emit("marco antonio");
        });
         
        console.log(values);
