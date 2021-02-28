@@ -1,16 +1,16 @@
 <div class="container">
 <div class="card">
-  <h5 class="card-header">Inventario</h5>
+  <h5 class="card-header">Resguardos</h5>
   <div class="card-body">
     <form>
       <div class="btn-group" role="group" aria-label="Basic example">
           <button (click)="deleteArticulosConfirm()" type="button" class="btn btn-danger">Eliminar</button>
-          <button type="button"(click)="editInventario()" class="btn btn-success">Actualizar</button>
+          <button type="button"class="btn btn-success">Actualizar</button>
           <select name="filtro" [(ngModel)]="filtro" class="form-control">
             <option disabled selected value>Filtrar</option>
-            <option value="descripcion">descripcion</option>
-            <option value="marca">marca</option>
-            <option value="modelo">modelo</option>
+            <option value="fecha">Feha</option>
+            <option value="id_resguardo">id resguardo</option>
+            
           </select>
           
         </div>
@@ -32,30 +32,22 @@
             <thead class="">
             <tr class="bg-primary text-white">
               <th  scope="col">#</th>
-              <th scope="col">imgen</th>
-              <th scope="col">Descripcion</th>
-              <th scope="col">Marca</th>
-              <th scope="col">Modelo</th>
-              <th scope="col">Categoria</th>
-              <th scope="col">serie</th>
-              <th scope="col">No.inventario</th>
-              <th scope="col">Cantidad</th>
-              <th scope="col">Localizacion</th>
+              <th scope="col">fecha</th>
+              <th scope="col">hora</th>
+              <th scope="col">observaciones</th>
+              <th scope="col">Documento</th>
+              
             </tr>
           </thead>
           <tbody>
 
             <tr tabindex="0" (click)="deleteArticulos(articulo.id_articulo)" *ngFor="let articulo of articulos ">
-              <th class="focus" scope="row">{{articulo.id_articulo}}</th>
-              <td><img class="focus"  src="http://192.168.1.75/api/archivos/articulos/{{articulo.imagen}}" height="50" width="50" ></td>
-              <td>{{articulo.descripcion}}</td>
-              <td>{{articulo.marca}}</td>
-              <td>{{articulo.modelo}}</td>
-              <td>{{articulo.categoria}}</td>
-              <td>{{articulo.no_serie}}</td>
-              <td>{{articulo.no_inventario}}</td>
-              <td>{{articulo.cantidad}}</td>
-              <td>{{articulo.localizacion}}</td>
+              <th class="focus" scope="row">{{articulo.id_resguardo}}</th>
+              <td>{{articulo.fecha}}</td>
+              <td>{{articulo.hora}}</td>
+              <td>{{articulo.observaciones}}</td>
+              <td><a href="http://192.168.1.75/api/pdf/pdfResguardo.php/?id={{articulo.id_resguardo}}" target="_blank">Imprimir</a></td>
+            
              
             </tr>
            

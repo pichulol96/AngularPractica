@@ -92,17 +92,21 @@ mensaje:string="pichu";
     eliminarArticuloLista(id:number)
     {
       //alert(id);
-      let c=0;//contador
-      for(let lista of this.listas)
-		{
-		    
-		    if(id==lista.id)
-		    {
-		      this.listas.splice(c,1) ;    		
-		    }
-		      c++;   	
+        let c=0;//contador
+        for(let lista of this.listas)
+  		{
+  		    
+  		    if(id==lista.id)
+  		    {
+  		      this.listas.splice(c,1) ;    		
+  		    }
+  		      c++;   	
 
-		}
+  		}
+      if(this.listas=='')
+      {
+        this.Tabla=false;
+      }
       
     }
 
@@ -110,9 +114,9 @@ mensaje:string="pichu";
     {
       //alert(this.observaciones);
        this.Tabla=false;
-      this.listas.push({observaciones:this.observaciones});
+      this.listas.push({observaciones:this.observaciones,colaborador:this.colaborador});
 
-    	//console.log(this.listas);
+    	console.log(this.listas);
       
 
       let consulta=this.listas;

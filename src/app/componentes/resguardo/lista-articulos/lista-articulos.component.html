@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card">
   <h5 class="card-header">Tabla de Articulos</h5>
-  {{colaborador}}
+  <h6>{{colaborador}}</h6>
   <div class="card-body">
   	
   	     <select name="filtro" [(ngModel)]="filtro" >
@@ -24,12 +24,12 @@
 	    <div style="display: flex; flex-wrap: wrap;">
 	    	 <div style="padding: 15px; margin-left: 10px;" *ngFor="let articulo of articulos ">
 	    	   <div class="card" style="width: 18rem;">
-				  <img src="{{articulo.imagen}}" class="card-img-top" alt="...">
+				  <img src="http://192.168.1.75/api/archivos/articulos/{{articulo.imagen}}" class="card-img-top" alt="...">
 				  <div class="card-body">
 				    <h5 class="card-title">{{articulo.id_articulo}} {{articulo.descripcion}}</h5>
-				    <p class="card-text">{{articulo.cantegoria}}</p>
-				    <p class="card-text">{{articulo.marca}}</p>
-				    <p class="card-text">{{articulo.cantidad}}</p>
+				    <p class="card-text">Categoria: {{articulo.categoria}}</p>
+				    <p class="card-text">Marca: {{articulo.marca}}</p>
+				    <p class="card-text">stock: {{articulo.cantidad}}</p>
 				    <button (click)="agregarArticuloLista(articulo.id_articulo,articulo.descripcion,articulo.imagen)" class="btn btn-sm btn-primary btn-block">Agregar</button>
 				  </div>
 	        </div>
@@ -59,7 +59,7 @@
 
             <tr tabindex="0"  *ngFor="let lista of listas ">
               <th class="focus" scope="row">{{lista.id}}</th>
-              <td><img class="focus"  src="{{lista.foto}}" height="50" width="50" ></td>
+              <td><img class="focus"  src="http://192.168.1.75/api/archivos/articulos/{{lista.foto}}" height="50" width="50" ></td>
               <td>{{lista.title}}</td>
               <button (click)="eliminarArticuloLista(lista.id)" class="btn btn-sm btn-danger">Quitar</button>
               

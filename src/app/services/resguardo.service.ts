@@ -18,10 +18,18 @@ export class ResguardoService {
 
   }
 
+
    savePersona(articulo:object)
   {
     //return this.http.post(this.url+'saveArticulos.php',articulo);
     return this.http.post(this.url+'resguardo/savePersona.php', JSON.stringify(articulo));  
+
+  }
+
+  searchResguardo(consulta:object)
+  {
+    //return this.http.post(this.url+'saveArticulos.php',articulo);
+    return this.http.post(this.url+'resguardo/searchResguardo.php', JSON.stringify(consulta));  
 
   }
 
