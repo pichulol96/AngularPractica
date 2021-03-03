@@ -25,6 +25,7 @@ mensaje:string="pichu";
       this.search='';
       this.filtro='';
       this.observaciones='';
+
    }
 
   ngOnInit(): void {
@@ -123,7 +124,7 @@ mensaje:string="pichu";
        let resul=this.ResguardoService.saveResguardo(consulta).subscribe(data=>{
          //this.articulos=data;
           console.log(data);
-            if(data=="Resguardo registrado")
+            if(data>0)
             {
               Swal.fire(
                 'Resguardo exitoso!',
@@ -132,6 +133,9 @@ mensaje:string="pichu";
               )
 
               this.listas=[];
+              window.open('http://192.168.1.75/api/pdf/pdfResguardo.php/?id='+data+'', '_blank');
+              console.log(data);
+
             }
          });
     }

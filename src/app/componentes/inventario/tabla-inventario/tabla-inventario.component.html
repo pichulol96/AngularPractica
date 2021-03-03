@@ -34,6 +34,7 @@
               <th  scope="col">#</th>
               <th scope="col">imgen</th>
               <th scope="col">Descripcion</th>
+              <th scope="col">Estado</th>
               <th scope="col">Marca</th>
               <th scope="col">Modelo</th>
               <th scope="col">Categoria</th>
@@ -49,6 +50,13 @@
               <th class="focus" scope="row">{{articulo.id_articulo}}</th>
               <td><img class="focus"  src="http://192.168.1.75/api/archivos/articulos/{{articulo.imagen}}" height="50" width="50" ></td>
               <td>{{articulo.descripcion}}</td>
+              <td  *ngIf="articulo.estado=='activo'">
+                <label class="activo">{{articulo.estado}}</label>
+              </td>
+
+              <td  *ngIf="articulo.estado=='inactivo'">
+                <label class="resguardo" >{{articulo.estado}}</label>
+              </td>
               <td>{{articulo.marca}}</td>
               <td>{{articulo.modelo}}</td>
               <td>{{articulo.categoria}}</td>

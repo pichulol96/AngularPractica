@@ -30,7 +30,8 @@
 				    <p class="card-text">Categoria: {{articulo.categoria}}</p>
 				    <p class="card-text">Marca: {{articulo.marca}}</p>
 				    <p class="card-text">stock: {{articulo.cantidad}}</p>
-				    <button (click)="agregarArticuloLista(articulo.id_articulo,articulo.descripcion,articulo.imagen)" class="btn btn-sm btn-primary btn-block">Agregar</button>
+				    <button *ngIf="articulo.estado=='activo'" (click)="agregarArticuloLista(articulo.id_articulo,articulo.descripcion,articulo.imagen)" class="btn btn-sm btn-primary btn-block">Agregar</button>
+            <button disabled="" class="btn btn-sm btn-danger btn-block" *ngIf="articulo.estado=='inactivo'">Inactivo</button>
 				  </div>
 	        </div>
 	   </div>
