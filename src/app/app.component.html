@@ -144,11 +144,11 @@
 							<a [routerLink]="['inventario/nuevoArticulo']" >
 								<img src="assets/icons2/bag-plus.svg"height="30">Nuevo articulo</a>
 						</li>
-						<li>
-							<a href="#">Nueva baja de articulos</a>
+						<li routerLinkActive="focusMenu">
+							<a [routerLink]="['inventario/bajasArticulos']" ><img src="assets/icons2/trash-fill.svg"height="30">Baja de articulos</a>
 						</li>
 						<li>
-							<a href="#">Listado de bajas</a>
+							<a href="#"><img src="assets/icons2/x-circle-fill.svg"height="30">Listado de bajas</a>
 						</li>
 					</ul>
 				
@@ -163,10 +163,11 @@
 						<li routerLinkActive="focusMenu">
 							<a [routerLink]="['resguardo/nuevoResguardo']"><img src="assets/icons2/file-plus-fill.svg"height="30">Nuevo resguardo</a>
 						</li>
-
+                        <!--
 						<li routerLinkActive="focusMenu">
 							<a [routerLink]="['resguardo/bajasResguardos']"><img src="assets/icons2/trash-fill.svg"height="30">Bajas</a>
 						</li>
+					-->
 
 					</ul>
 					

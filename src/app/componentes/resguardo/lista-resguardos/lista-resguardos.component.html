@@ -34,6 +34,7 @@
             <tr class="bg-primary text-white">
               <th  scope="col">#</th>
               <th scope="col">No. colaborador</th>
+              <th scope="col">estado</th>
               <th scope="col">fecha</th>
               <th scope="col">hora</th>
               <th scope="col">observaciones</th>
@@ -43,9 +44,16 @@
           </thead>
           <tbody *ngFor="let articulo of articulos ">
             
-            <tr tabindex="0"  (click)="deleteArticulos(articulo.id_resguardo)"  *ngIf="articulo.estado=='altas'"  >
+            <tr tabindex="0"  (click)="deleteArticulos(articulo.id_resguardo)"  >
               <th class="focus" scope="row">{{articulo.id_resguardo}}</th>
               <td>{{articulo.no_colaborador}}</td>
+              <td *ngIf="articulo.estado=='activo'" >
+                <label class="activo">{{articulo.estado}}</label>
+              </td>
+              <td *ngIf="articulo.estado=='inactivo'" >
+                <label class="resguardo">{{articulo.estado}}</label>
+              </td>
+
               <td>{{articulo.fecha}}</td>
               <td>{{articulo.hora}}</td>
               <td>{{articulo.observaciones}}</td>

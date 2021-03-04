@@ -10,6 +10,7 @@ import { FormEditarUsuariosComponent } from './componentes/./usuarios/./form-edi
 import { TablaInventarioComponent } from './componentes/./inventario/./tabla-inventario/tabla-inventario.component';
 import { FormEditarInventarioComponent } from './componentes/./inventario/./form-editar-inventario/form-editar-inventario.component';
 import { FormRegistroInventarioComponent } from './componentes/./inventario/./form-registro-inventario/form-registro-inventario.component';
+import { BajasComponent } from './componentes/./inventario/./bajas/bajas.component';
 import { RegistroResguardoComponent } from './componentes/resguardo/registro-resguardo/registro-resguardo.component';
 import { ListaArticulosComponent } from './componentes/resguardo/lista-articulos/lista-articulos.component';
 import { ListaResguardosComponent } from './componentes/resguardo/lista-resguardos/lista-resguardos.component';
@@ -32,11 +33,13 @@ const routes: Routes = [
      {path:'inventario/nuevoArticulo',component:FormRegistroInventarioComponent},
 
      {path:'inventario/editarArticulo',component:FormEditarInventarioComponent},
+
+     {path:'inventario/bajasArticulos',component:BajasComponent},
      //resguardo
      {path:'resguardo/nuevoResguardo',component:RegistroResguardoComponent},
      {path:'resguardo/listaArticulos',component:ListaArticulosComponent},
      {path:'resguardo/listaResguardos',component:ListaResguardosComponent},
-     {path:'resguardo/bajasResguardos',component:ResguadoBajasComponent},
+     //{path:'resguardo/bajasResguardos',component:ResguadoBajasComponent},
 ];
 
 @NgModule({

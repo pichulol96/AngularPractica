@@ -23,6 +23,7 @@ import { RegistroResguardoComponent } from './componentes/resguardo/registro-res
 import { ListaArticulosComponent } from './componentes/resguardo/lista-articulos/lista-articulos.component';
 import { ListaResguardosComponent } from './componentes/resguardo/lista-resguardos/lista-resguardos.component';
 import { ResguadoBajasComponent } from './componentes/resguardo/resguado-bajas/resguado-bajas.component';
+import { BajasComponent } from './componentes/inventario/bajas/bajas.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ResguadoBajasComponent } from './componentes/resguardo/resguado-bajas/r
     RegistroResguardoComponent,
     ListaArticulosComponent,
     ListaResguardosComponent,
-    ResguadoBajasComponent
+    ResguadoBajasComponent,
+    BajasComponent
   ],
   imports: [
     BrowserModule,
