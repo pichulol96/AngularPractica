@@ -1,17 +1,18 @@
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {InventarioService } from '../../.././services/inventario.service';//servicio
-//formularios
-import {NgForm,FormGroup,FormBuilder,FormControl,Validators} from '@angular/forms';
+import {ResguardoService } from '../../.././services/resguardo.service';
+
 import { Router } from '@angular/router';//rutas
 import Swal from 'sweetalert2';//alertas
 
 @Component({
-  selector: 'app-tabla-inventario',
-  templateUrl: './tabla-inventario.component.html',
-  styleUrls: ['./tabla-inventario.component.css']
+  selector: 'app-resguado-bajas',
+  templateUrl: './resguado-bajas.component.html',
+  styleUrls: ['./resguado-bajas.component.css']
 })
-export class TablaInventarioComponent implements OnInit {
-//articulos = null;
+export class ResguadoBajasComponent implements OnInit {
+
+  	//articulos = null;
  //buscar
  search:any;
  filtro:any;
@@ -20,31 +21,23 @@ export class TablaInventarioComponent implements OnInit {
  articulos:any;
  //eliminar
  deleteArti:number;
- estadoArti:string='';
  //lista
  listas:any;
-  constructor(private InventarioService:InventarioService,private router:Router) {
-       //this.getArticulos(); //trate todos datos de la tabla al cargar el componente
-       this.listas=[];
+
+  constructor(private ResguardoService:ResguardoService,private router:Router) {
+        this.listas=[];
        this.deleteArti=0;
        this.search='';
        this.filtro='';
        this.objeto={};
-
    }
 
   ngOnInit(): void {
   }
 
-  @Output()
-  inventario: EventEmitter<string>=new EventEmitter<string>();
-  editInventario(){
-  	this.inventario.emit('true');
-  }
-
-    getArticulos()
+  getArticulos()
     {
-     let resul=this.InventarioService.getArticulos().subscribe(data=>{
+     let resul=this.ResguardoService.searchResguardo(this.filtro).subscribe(data=>{
        this.articulos=data;
        console.log(data);
      });
@@ -68,7 +61,7 @@ export class TablaInventarioComponent implements OnInit {
            campo:this.search
            }
          //console.log(this.objeto);
-         let resul=this.InventarioService.searchArticulos(consulta).subscribe(data=>{
+         let resul=this.ResguardoService.searchResguardo(consulta).subscribe(data=>{
          this.articulos=data;
            if(this.articulos=='')
            {
@@ -84,11 +77,10 @@ export class TablaInventarioComponent implements OnInit {
        }
     }
 
-    deleteArticulos(id:number,estado:string)
+    deleteArticulos(id:number)
     {
        //alert(id);
        this.deleteArti=id;
-       this.estadoArti=estado;
     }
     deleteArticulosConfirm()
     {
@@ -100,20 +92,8 @@ export class TablaInventarioComponent implements OnInit {
             'Debe selecionar el articulo que desea eliminar',
             '',
             'warning'
-
           )
-          return;
          
-        }
-        if(this.estadoArti=="inactivo")
-        {
-         Swal.fire(
-            'No se puede eliminar este articulo porque primero se debe de dar de baja el resguardo',
-            '',
-            'warning'
-             
-          )
-         return ;
         }
         else
         {
@@ -131,7 +111,7 @@ export class TablaInventarioComponent implements OnInit {
                       if (result.isConfirmed) 
                       {
                           let id=this.deleteArti;
-                          let resul=this.InventarioService.deleteArticulos(id).subscribe
+                         /* let resul=this.ResguardoService.deleteArticulos(id).subscribe
                           (data=>{
                            if(data=="eliminado")
                            {
@@ -147,12 +127,10 @@ export class TablaInventarioComponent implements OnInit {
                          this.articulos=[];
                         // return this.getArticulos();
                          
-                      }
+                      */}
                     })
                    
         }
     }
-
-  
 
 }

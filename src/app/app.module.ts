@@ -22,6 +22,7 @@ import { FormRegistroInventarioComponent } from './componentes/./inventario/./fo
 import { RegistroResguardoComponent } from './componentes/resguardo/registro-resguardo/registro-resguardo.component';
 import { ListaArticulosComponent } from './componentes/resguardo/lista-articulos/lista-articulos.component';
 import { ListaResguardosComponent } from './componentes/resguardo/lista-resguardos/lista-resguardos.component';
+import { ResguadoBajasComponent } from './componentes/resguardo/resguado-bajas/resguado-bajas.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ListaResguardosComponent } from './componentes/resguardo/lista-resguard
     FormRegistroInventarioComponent,
     RegistroResguardoComponent,
     ListaArticulosComponent,
-    ListaResguardosComponent
+    ListaResguardosComponent,
+    ResguadoBajasComponent
   ],
   imports: [
     BrowserModule,

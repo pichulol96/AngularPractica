@@ -40,6 +40,12 @@ export class ResguardoService {
 
   }
 
+  deleteResguardo(idResguardo:number) {
+    //console.log(idArticulo);
+    return this.http.delete(`${this.url}resguardo/deleteResguardo.php?id=${idResguardo}`);
+   
+  }
+
 }
 
 

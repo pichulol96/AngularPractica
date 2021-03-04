@@ -13,6 +13,10 @@ import { FormRegistroInventarioComponent } from './componentes/./inventario/./fo
 import { RegistroResguardoComponent } from './componentes/resguardo/registro-resguardo/registro-resguardo.component';
 import { ListaArticulosComponent } from './componentes/resguardo/lista-articulos/lista-articulos.component';
 import { ListaResguardosComponent } from './componentes/resguardo/lista-resguardos/lista-resguardos.component';
+import { ResguadoBajasComponent } from './componentes/resguardo/resguado-bajas/resguado-bajas.component';
+
+
+
 const routes: Routes = [
      //usuarios
      {path:'user/registrar',component:FormRegistroUsuariosComponent},
@@ -32,6 +36,7 @@ const routes: Routes = [
      {path:'resguardo/nuevoResguardo',component:RegistroResguardoComponent},
      {path:'resguardo/listaArticulos',component:ListaArticulosComponent},
      {path:'resguardo/listaResguardos',component:ListaResguardosComponent},
+     {path:'resguardo/bajasResguardos',component:ResguadoBajasComponent},
 ];
 
 @NgModule({

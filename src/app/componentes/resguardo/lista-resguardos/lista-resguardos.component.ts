@@ -99,7 +99,7 @@ export class ListaResguardosComponent implements OnInit {
          //alert(this.deleteArti);
             Swal.fire({
             title: 'Estas seguro?',
-            text: "id del articulo: "+this.deleteArti,
+            text: "id resguardo: "+this.deleteArti,
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -110,7 +110,7 @@ export class ListaResguardosComponent implements OnInit {
                       if (result.isConfirmed) 
                       {
                           let id=this.deleteArti;
-                         /* let resul=this.ResguardoService.deleteArticulos(id).subscribe
+                          let resul=this.ResguardoService.deleteResguardo(id).subscribe
                           (data=>{
                            if(data=="eliminado")
                            {
@@ -126,7 +126,7 @@ export class ListaResguardosComponent implements OnInit {
                          this.articulos=[];
                         // return this.getArticulos();
                          
-                      */}
+                      }
                     })
                    
         }
