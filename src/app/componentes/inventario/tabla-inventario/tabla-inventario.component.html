@@ -48,7 +48,7 @@
 
             <tr tabindex="0" (click)="deleteArticulos(articulo.id_articulo,articulo.estado)" *ngFor="let articulo of articulos ">
               <th class="focus" scope="row">{{articulo.id_articulo}}</th>
-              <td><img class="focus"  src="http://192.168.1.75/api/archivos/articulos/{{articulo.imagen}}" height="50" width="50" ></td>
+              <td><img class="focus"  src="http://localhost/api/archivos/articulos/{{articulo.imagen}}" height="50" width="50" ></td>
               <td>{{articulo.descripcion}}</td>
               <td  *ngIf="articulo.estado=='activo'">
                 <label class="activo">{{articulo.estado}}</label>

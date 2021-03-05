@@ -133,7 +133,7 @@ mensaje:string="pichu";
               )
 
               this.listas=[];
-              window.open('http://192.168.1.75/api/pdf/pdfResguardo.php/?id='+data+'', '_blank');
+              window.open('http://localhost/api/pdf/pdfResguardo.php/?id='+data+'', '_blank');
               console.log(data);
 
             }

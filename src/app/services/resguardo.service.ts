@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ResguardoService {
-	 public url="http://192.168.1.75/api/views/";
+	 public url="http://localhost/api/views/";
    colaboraor$ = new EventEmitter<string>();
 
   constructor( private http: HttpClient) { }
