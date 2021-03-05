@@ -136,7 +136,7 @@ mensaje:string="pichu";
 
               this.listas=[];
               this.articulos=[];
-              //window.open('http://192.168.1.75/api/pdf/pdfBajas.php/?id='+data+'', '_blank');
+              window.open('http://192.168.1.75/api/pdf/pdfBajas.php/?id='+data+'', '_blank');
               console.log(data);
 
             }

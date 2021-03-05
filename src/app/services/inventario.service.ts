@@ -54,6 +54,13 @@ export class InventarioService {
 
   }
 
+  listadoBajas(consulta:object)
+  {
+    //return this.http.post(this.url+'saveArticulos.php',articulo);
+    return this.http.post(this.url+'listasBajas.php', JSON.stringify(consulta));  
+
+  }
+
   
 }
 

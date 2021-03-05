@@ -1,0 +1,71 @@
+<div class="container">
+<div class="card">
+  <h5 class="card-header">Lista de Bajas</h5>
+  <div class="card-body">
+    <form>
+      <div class="btn-group" role="group" aria-label="Basic example">
+          <button (click)="deleteArticulosConfirm()" type="button" class="btn btn-danger">Eliminar</button>
+          <button type="button"class="btn btn-success">Actualizar</button>
+          <select name="filtro" [(ngModel)]="filtro" class="form-control">
+            <option disabled selected value>Filtrar</option>
+            <option value="fecha">Feha</option>
+            <option value="id_resguardo">id resguardo</option>
+            <option value="no_colaborador">Numero colaborador</option>
+            
+          </select>
+          
+        </div>
+        <h2>{{search}}</h2>
+          
+        <div class="input-group mb-3">
+            <input type="text" name="search" [(ngModel)]="search"  class="form-control" placeholder="Buscar articulo" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button (click)=searchArticulos() class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+            </div>
+        </div>
+  
+
+      
+    </form>
+
+      <div class="table-responsive-sm">
+          <table class="table table table-hover">
+            <thead class="">
+            <tr class="bg-primary text-white">
+              <th  scope="col">#</th>
+              <th scope="col">No. colaborador</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Hora</th>
+              <th scope="col">Detalles</th>
+              <th scope="col">Departamento</th>
+              <th scope="col">Documento</th>
+              
+            </tr>
+          </thead>
+          <tbody *ngFor="let articulo of articulos ">
+            
+            <tr tabindex="0"  (click)="deleteArticulos(articulo.id_resguardo)"  >
+              <th class="focus" scope="row">{{articulo.id_bajas}}</th>
+              <td>{{articulo.no_colaborador}}</td>
+              <td >
+                {{articulo.nombre_completo}}
+              </td>
+
+              <td>{{articulo.fecha}}</td>
+              <td>{{articulo.hora}}</td>
+              <td>{{articulo.descripcion}}</td>
+              <td>{{articulo.departamento_usuario}}</td>
+              <td><a href="http://localhost/api/pdf/pdfBajas.php/?id={{articulo.id_bajas}}" target="_blank">Imprimir</a></td>
+            
+             
+            </tr>
+           
+          </tbody>
+          </table>
+    </div>
+
+
+  </div>
+</div>
+</div>

@@ -24,6 +24,7 @@ import { ListaArticulosComponent } from './componentes/resguardo/lista-articulos
 import { ListaResguardosComponent } from './componentes/resguardo/lista-resguardos/lista-resguardos.component';
 import { ResguadoBajasComponent } from './componentes/resguardo/resguado-bajas/resguado-bajas.component';
 import { BajasComponent } from './componentes/inventario/bajas/bajas.component';
+import { ListaBajasComponent } from './componentes/inventario/lista-bajas/lista-bajas.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { BajasComponent } from './componentes/inventario/bajas/bajas.component';
     ListaArticulosComponent,
     ListaResguardosComponent,
     ResguadoBajasComponent,
-    BajasComponent
+    BajasComponent,
+    ListaBajasComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { TablaInventarioComponent } from './componentes/./inventario/./tabla-inv
 import { FormEditarInventarioComponent } from './componentes/./inventario/./form-editar-inventario/form-editar-inventario.component';
 import { FormRegistroInventarioComponent } from './componentes/./inventario/./form-registro-inventario/form-registro-inventario.component';
 import { BajasComponent } from './componentes/./inventario/./bajas/bajas.component';
+import { ListaBajasComponent } from './componentes/./inventario/./lista-bajas/lista-bajas.component';
 import { RegistroResguardoComponent } from './componentes/resguardo/registro-resguardo/registro-resguardo.component';
 import { ListaArticulosComponent } from './componentes/resguardo/lista-articulos/lista-articulos.component';
 import { ListaResguardosComponent } from './componentes/resguardo/lista-resguardos/lista-resguardos.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
      {path:'inventario/editarArticulo',component:FormEditarInventarioComponent},
 
      {path:'inventario/bajasArticulos',component:BajasComponent},
+     {path:'inventario/listaBajasArticulos',component:ListaBajasComponent},
      //resguardo
      {path:'resguardo/nuevoResguardo',component:RegistroResguardoComponent},
      {path:'resguardo/listaArticulos',component:ListaArticulosComponent},
