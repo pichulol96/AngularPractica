@@ -43,6 +43,7 @@ import { ListaBajasComponent } from './componentes/inventario/lista-bajas/lista-
     ResguadoBajasComponent,
     BajasComponent,
     ListaBajasComponent
+    
   ],
   imports: [
     BrowserModule,

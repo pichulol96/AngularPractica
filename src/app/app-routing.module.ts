@@ -26,6 +26,7 @@ const routes: Routes = [
      {path:'user/consultar',component:TablaUsuariosComponent},
 
      //login
+     //{path:'',component:LoginComponent},
      {path:'login',component:LoginComponent},
 
      //inventario

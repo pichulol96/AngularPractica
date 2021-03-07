@@ -95,14 +95,14 @@
 				</div>
 			</div>
 			<div class="col-sm-8">
-				<h1>Sistemaa de control de inventarios y resguardo</h1>
+				<h1>Sistema de control de inventarios y resguardo</h1>
 			</div>
 
 		</div>
 
 		<div class="">
-			<div class="datos-login">
-					<h4>Marco Antonio Lorenzo Lucena</h4>
+			<div *ngFor="let user of users" class="datos-login"> <!--*nIf="logeado"--> 
+					<h4>{{user.nombre_completo}}</h4>
 					<button  class="btn btn-sm btn-danger"><img src="assets/icons2/power.svg" height="20"></button>
 			</div>
 		</div>
@@ -112,7 +112,7 @@
 
 <div class="">
 	<div style="" class="row">
-		<div  class=" col-sm-2">
+		<div *ngIf="logeado"  class=" col-sm-2">
 			<nav class="shadow p-3 mb-5 bg-white rounded">
 				<div class="menu">
 				<div class="submenu-1">
@@ -180,8 +180,12 @@
 		<div  class="  col-sm-10 ">
 			<section>
 				<div class="contenido">
-				  <router-outlet></router-outlet>
+				  <router-outlet  ></router-outlet>
 			    </div>
+			</section>
+
+			<section *ngIf="panelAdmi">
+				<app-login (comunicacion)="recibirMensaje( $event )"></app-login>
 			</section>
 		</div>
 	</div>
