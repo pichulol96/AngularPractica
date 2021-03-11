@@ -103,7 +103,7 @@
 		<div class="">
 			<div *ngFor="let user of users" class="datos-login"> <!--*nIf="logeado"--> 
 					<h4>{{user.nombre_completo}}</h4>
-					<button  class="btn btn-sm btn-danger"><img src="assets/icons2/power.svg" height="20"></button>
+					<button (click)="salir()"  class="btn btn-sm btn-danger"><img src="assets/icons2/power.svg" height="20"></button>
 			</div>
 		</div>
 	    

@@ -4,43 +4,49 @@
             <h5 class="card-header">Usuarios registrados</h5>
           
          <div class="card-body">
-				 <form   (ngSubmit)="submit()">
+				 <form [formGroup]="registerUser" (ngSubmit)="newUser(registerUser.value)" >
                      <h5>Datos personales</h5>
 					 <div class="input-group mb-3">
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Numero de colaborador</span>
 						  </div>
-						  <input type="text" class="form-control"  aria-describedby="basic-addon1">
+						  <input type="text" formControlName="numeroColaborador" class="form-control"  aria-describedby="basic-addon1">
                       </div>
 
                        <div class="input-group mb-3">
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Nombres</span>
 						  </div>
-						  <input type="text" class="form-control" aria-describedby="basic-addon1">
+						  <input type="text" formControlName="nombre"  class="form-control" aria-describedby="basic-addon1">
                       </div>
 
                        <div class="input-group mb-3">
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Apellido paterno</span>
 						  </div>
-						  <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+						  <input type="text" formControlName="apellido_paterno" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
                       </div>
 
                        <div class="input-group mb-3">
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Apellido materno</span>
 						  </div>
-						  <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+						  <input type="text" formControlName="apellido_materno" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
                       </div>
 
                        <div class="input-group mb-3">
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Puesto/Cargo</span>
 						  </div>
-						  <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+						  <input type="text" formControlName="puesto" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
                       </div>
-
+                      <div class="input-group mb-3">
+						  <div class="input-group-prepend">
+						    <span class="input-group-text" id="basic-addon1">Personal externo</span>
+						  </div>
+						  <input type="text" formControlName="personalExterno" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                       <!-- 
                        <div class="input-group mb-3">
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Departamento</span>
@@ -52,6 +58,13 @@
 							<option>3</option>
 						</select>
                       </div>
+                  -->
+                      <div class="input-group mb-3">
+						  <div class="input-group-prepend">
+						    <span class="input-group-text" id="basic-addon1">Departamento</span>
+						  </div>
+						  <input type="text" formControlName="departamento" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
                       
                       <h5>Cuenta</h5>
 
@@ -59,26 +72,36 @@
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Correo</span>
 						  </div>
-						  <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+						  <input type="text" formControlName="correo" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
                       </div>
 
                       <div class="input-group mb-3">
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Nombre de usuario</span>
 						  </div>
-						  <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+						  <input type="text" formControlName="usuario" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+
+                       <div  class="input-group mb-3">
+						  <!--<div class="input-group-prepend">
+						    <span class="input-group-text" id="basic-addon1">Rol</span>
+						  </div>-->
+						  <select formControlName="rol" class="form-control">
+							<option disabled selected value="">Seleccione un rol</option>
+							<option *ngFor="let rol of roles" value="{{rol.id_rol}}">{{rol.rol}}</option>
+						</select>
                       </div>
 
                       <div class="input-group mb-3">
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Contraseña</span>
 						  </div>
-						  <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+						  <input type="text" formControlName="contrasena" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
                       </div>
 
 					
                         <div class="input-group mb-3">
-                        	<button type="submit" class="btn btn-sm btn-info ">Registrar</button>
+                        	<button type="submit" [disabled]="registerUser.invalid" class="btn btn-sm btn-info ">Registrar</button>
 						<button type="reset" class="btn btn-sm registrar  ">Cabelar</button>
                         </div>
 						<br><br>

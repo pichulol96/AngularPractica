@@ -4,7 +4,7 @@
             <h4>Registrar nuevo articulo </h4>
           </div>
          <div class="card-body">
-				 <form [formGroup]="articulosRegistrar" (ngSubmit)="newArticulo(articulosRegistrar.value)" >
+				 <form  enctype="multipart/form-data" [formGroup]="articulosRegistrar" (ngSubmit)="newArticulo(articulosRegistrar.value)" >
                      <h5>
                         	{{articuloGuardado}}
                         </h5>
@@ -70,8 +70,12 @@
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Imagen</span>
 						  </div>
-						  <!--<input type="file" formControlName="" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">-->
+						  
+						 <!-- <input type="file" formControlName="imagen" class="form-control"  aria-label="Username" aria-describedby="basic-addon1"accept="image/*">
+						  -->
+						  
 						  <input type="text"  formControlName="imagen" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+					
 						 
                       </div>
 

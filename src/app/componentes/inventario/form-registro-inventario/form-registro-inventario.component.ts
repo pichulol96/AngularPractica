@@ -38,17 +38,19 @@ export class FormRegistroInventarioComponent implements OnInit {
 
   ngOnInit(): void {
   }
+ 
 
 	newArticulo(values:object)
 	{
 		//alert("hola");
+    
        let resul=this.InventarioService.saveArticulos(values).subscribe(data=>{
        //	console.log(data)
          
          	//this.articuloGuardado="El Articulo se registro con exito";
-           Swal.fire({
+          Swal.fire({
           position: 'top-end',
-          icon: 'success',
+          icon: 'success',//http://localhost:4200/inventario/nuevoArticulo
           title: 'Articulo Registrado',
           showConfirmButton: false,
           timer: 1000
@@ -67,6 +69,12 @@ export class FormRegistroInventarioComponent implements OnInit {
             imagen:''
          });
        });
-       //console.log(values);
+       
+       console.log(values)
+      
+        
+       
+        
+      
 	}
 }

@@ -13,7 +13,7 @@ export class AppComponent {
 	panelAdmi:boolean;
 	//datos del usuario logeado
   users:any=[]
-  title = 'AngularPractica';
+  //title = 'AngularPractica';
   constructor(private router:Router)
   {
      this.logeado=false;
@@ -22,16 +22,23 @@ export class AppComponent {
   ngOnInit(): void {
   }
 
-recibirMensaje(mensaje:object)
-{   
-	this.logeado=true;
-	this.panelAdmi=false;
-  console.log(mensaje);
-  this.users=mensaje;
-	this.router.navigate(['inventario/listaArticulos']);
-	//alert("hola");
-   
-}
-  
-  
-}
+    recibirMensaje(mensaje:object)
+    {   
+    	this.logeado=true;
+    	this.panelAdmi=false;
+      console.log(mensaje);
+      this.users=mensaje;
+    	this.router.navigate(['inventario/listaArticulos']);
+    	//alert("hola");
+       
+    }
+
+    salir()
+    {
+      //alert("hola");
+      this.users=[];
+      this.logeado=false;
+      this.panelAdmi=true;
+      this.router.navigate(['']);
+    }
+ }

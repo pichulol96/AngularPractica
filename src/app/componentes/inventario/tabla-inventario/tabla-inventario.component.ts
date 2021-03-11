@@ -21,6 +21,11 @@ export class TablaInventarioComponent implements OnInit {
  //eliminar
  deleteArti:number;
  estadoArti:string='';
+ 
+ //edit
+ Editar:any=[];
+ contenido:boolean=true;
+ editArticulo:boolean=false;
  //lista
  listas:any;
   constructor(private InventarioService:InventarioService,private router:Router) {
@@ -84,11 +89,42 @@ export class TablaInventarioComponent implements OnInit {
        }
     }
 
-    deleteArticulos(id:number,estado:string)
+    edit()
+    {
+       if(this.deleteArti==0)
+        {
+
+          //alert("Debe seleccionar algun articulo que quiera eliminar primero");
+          Swal.fire(
+            'Debe selecionar el articulo que desea Editar',
+            '',
+            'warning'
+
+          )
+          return;
+         
+        }
+        else
+        {
+          this.deleteArti=0;
+          this.contenido=false;
+          this.editArticulo=true;
+        }
+      
+    }
+
+    deleteArticulos(id:number,estado:string,descripcion:string,marca:string,modelo:string,
+                    categoria:string,serie:string,numeroInventario:number,
+                    cantidad:number,localizacion:string,imagen:string)
     {
        //alert(id);
        this.deleteArti=id;
        this.estadoArti=estado;
+       this.Editar.push({id:id,descripcion:descripcion,marca:marca,modelo:modelo,
+                        categoria:categoria,
+                         serie:serie,numeroInventario:numeroInventario,cantidad:cantidad,
+                         localizacion:localizacion,imagen:imagen});
+       console.log(this.Editar);
     }
     deleteArticulosConfirm()
     {
@@ -152,6 +188,14 @@ export class TablaInventarioComponent implements OnInit {
                    
         }
     }
+
+    atras()
+  {
+    this.editArticulo=false;
+    this.contenido=true;
+  }
+
+
 
   
 

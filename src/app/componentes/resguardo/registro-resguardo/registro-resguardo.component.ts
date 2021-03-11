@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./registro-resguardo.component.css']
 })
 export class RegistroResguardoComponent implements OnInit {
+ 
   mostrarResguardo=true;
 	resguardoRegistrar : FormGroup;
 	existente='';

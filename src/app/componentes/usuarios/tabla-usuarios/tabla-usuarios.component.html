@@ -1,23 +1,26 @@
+<div class="container">
 <div class="card">
   <h5 class="card-header">Usuarios registrados</h5>
   <div class="card-body">
     <form>
       <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-danger">Eliminar</button>
-          <button type="button"(click)="editUser()" class="btn btn-success">Actualizar</button>
-          <select class="form-control">
+          <button (click)="deleteArticulosConfirm()"  type="button" class="btn btn-danger"><img src="assets/icons2/trash.svg"></button>
+          <button type="button"(click)="editUser()" class="btn btn-success"><img src="assets/icons2/pencil-square.svg"></button>
+          <select  class="form-control" [(ngModel)]="filtro" name="filtro">
             <option disabled selected value>Filtrar</option>
-            <option>nombre</option>
-            <option>fecha</option>
-            <option>apellidos</option>
+            <option value="nombre_usuario">Usuario</option>
+            <option value="correo">Correo</option>
+            <option value="nombre_completo">Nombre</option>
+            <option value="no_colaborador">No colaborador</option>
           </select>
+          
           
         </div>
 
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Buscar usuarios" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input type="text" name="search" [(ngModel)]="search"  class="form-control" placeholder="Buscar usuarios" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+              <button (click)="searchUsuarios()" class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
             </div>
         </div>
   
@@ -31,32 +34,35 @@
             <thead class="">
             <tr class="bg-primary text-white">
               <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">correo</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Puesto</th>
+              <th scope="col">colaborador</th>
+              <th scope="col">Departamento</th>
+              <th scope="col">Personalexterno</th>
+              <th scope="col">Rol</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+            <tr  tabindex="0" (click)="deleteArticulos(user.idusuario)" *ngFor="let user of users ">
+              <td>{{user.idusuario}}</td>
+              <td>{{user.nombre_usuario}}</td>
+              <td>{{user.correo}}</td>
+              <td>{{user.nombre_completo}}</td>
+              <td>{{user.puesto}}</td>
+              <td>{{user.no_colaborador}}</td>
+              <td>{{user.departamento_usuario}}</td>
+              <td>{{user.personal_externo}}</td>
+              <td>{{user.rol}}</td>
+
+              
             </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+          
           </tbody>
           </table>
     </div>
 
   </div>
+</div>
 </div>

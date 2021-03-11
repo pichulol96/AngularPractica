@@ -40,6 +40,13 @@ export class InventarioService {
 
   }
 
+  editArticulos(articulo:object)
+  {
+    //return this.http.post(this.url+'saveArticulos.php',articulo);
+    return this.http.post(this.url+'editArticulos.php', JSON.stringify(articulo));  
+
+  }
+
 
   deleteArticulos(idArticulo:number) {
     //console.log(idArticulo);

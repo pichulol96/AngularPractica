@@ -1,11 +1,11 @@
 <div class="container">
-<div class="card">
+<div *ngIf="contenido" class="card">
   <h5 class="card-header">Inventario</h5>
   <div class="card-body">
     <form>
       <div class="btn-group" role="group" aria-label="Basic example">
-          <button (click)="deleteArticulosConfirm()" type="button" class="btn btn-danger">Eliminar</button>
-          <button type="button"(click)="editInventario()" class="btn btn-success">Actualizar</button>
+          <button (click)="deleteArticulosConfirm()" type="button" class="btn btn-danger"><img src="assets/icons2/trash.svg"></button>
+          <button type="button"(click)="edit()" class="btn btn-success"><img src="assets/icons2/pencil-square.svg"></button>
           <select name="filtro" [(ngModel)]="filtro" class="form-control">
             <option disabled selected value>Filtrar</option>
             <option value="descripcion">descripcion</option>
@@ -30,7 +30,7 @@
       <div class="table-responsive-sm">
           <table class="table table table-hover">
             <thead class="">
-            <tr class="bg-primary text-white">
+            <tr class="bg-info text-white">
               <th  scope="col">#</th>
               <th scope="col">imgen</th>
               <th scope="col">Descripcion</th>
@@ -46,7 +46,7 @@
           </thead>
           <tbody>
 
-            <tr tabindex="0" (click)="deleteArticulos(articulo.id_articulo,articulo.estado)" *ngFor="let articulo of articulos ">
+            <tr tabindex="0" (click)="deleteArticulos(articulo.id_articulo,articulo.estado,articulo.descripcion,articulo.marca,articulo.modelo,articulo.categoria,articulo.no_serie,articulo.no_inventario,articulo.cantidad,articulo.localizacion,articulo.imagen)" *ngFor="let articulo of articulos ">
               <th class="focus" scope="row">{{articulo.id_articulo}}</th>
               <td><img class="focus"  src="http://localhost/api/archivos/articulos/{{articulo.imagen}}" height="50" width="50" ></td>
               <td>{{articulo.descripcion}}</td>
@@ -74,4 +74,10 @@
 
   </div>
 </div>
+<div class="container">
+  <button *ngIf="editArticulo" (click)="atras()" class="btn btn-dark">Atras</button>
+</div>
+
+<app-form-editar-inventario [editar]=Editar *ngIf="editArticulo"></app-form-editar-inventario>
+
 </div>
